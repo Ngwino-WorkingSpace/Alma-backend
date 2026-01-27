@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import healthRoutes from "./routes/health.routes.js"
+import authRoutes from "./routes/auth.route.js"
 
 
 const app = express();
@@ -14,6 +15,7 @@ app.get("/", (req, res) => {
 
 
 app.use("/health", healthRoutes)
+app.use("/auth", authRoutes)
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
